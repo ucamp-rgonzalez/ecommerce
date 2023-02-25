@@ -1,18 +1,18 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+require('dotenv').config();
 
-const app = express();
-const port = 4000;
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-app.use(bodyParser.json())
+require('./config/db')().then(() => {
+  const app = express();
 
-app.get('/', (request, response) => {
-    response.json({
-        status: 200,
-        message: "Hola"
-    })
-})
+  app.use(bodyParser.json());
+  app.use(cors());
 
-app.listen(+port, () => {
-    console.log(`Server listen port ${port}`)
-})
+  require('./routes')(app);
+
+  app.listen(+process.env.APP_PORT, () => {
+    console.log(`Server listen port ${process.env.APP_PORT}`);
+  });
+});
