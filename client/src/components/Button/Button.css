@@ -1,0 +1,28 @@
+.button {
+  border: 0 solid transparent;
+}
+
+.button.default {
+  color: black;
+  background-color: white;
+}
+
+.button.primary {
+  color: white;
+  background-color: blue;
+}
+
+.button.secondary {
+  color: black;
+  background-color: gray;
+}
+
+.button.danger {
+  color: white;
+  background-color: red;
+}
+
+.button.warning {
+  color: white;
+  background-color: yellow;
+}

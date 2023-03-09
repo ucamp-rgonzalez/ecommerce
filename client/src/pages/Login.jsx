@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -13,7 +12,7 @@ const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      <Button onClick={handleLogin}>Login</Button>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 };
